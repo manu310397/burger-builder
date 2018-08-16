@@ -77,11 +77,15 @@ class BurgerBuilder extends Component {
     // }
 
     purchaseHandler = () => {
-        if(this.props.isAuthenticated)
+        console.log("in purchase handler")
+        if(this.props.isAuthenticated){
             this.setState({purchasing: true});
-        else
+
+        }
+        else{
             this.props.onSetAuthRedirect('/checkout');
             this.props.history.push('/auth');
+        }
     }
 
     purchaseCancelHandler = () => {
